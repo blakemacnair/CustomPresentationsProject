@@ -12,6 +12,8 @@ class CardPresentationController: UIPresentationController {
 
     // MARK: - Properties
 
+    private var presentedOffset: CGFloat = 0
+
     private lazy var dimmingView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +24,7 @@ class CardPresentationController: UIPresentationController {
 
     override var frameOfPresentedViewInContainerView: CGRect {
         let frame: CGRect = CGRect(origin: CGPoint(x: 0,
-                                                   y: containerView!.frame.height*(1.0/3.0)),
+                                                   y: presentedOffset),
                                    size: size(forChildContentContainer: presentedViewController,
                                               withParentContainerSize: containerView!.bounds.size))
 
@@ -31,11 +33,19 @@ class CardPresentationController: UIPresentationController {
 
     // MARK: - Init
 
-    override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+    override init(presentedViewController: UIViewController,
+                  presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController,
                    presenting: presentingViewController)
 
         setupGestureRecognizer()
+    }
+
+    convenience init(presentedViewController: UIViewController,
+                  presenting presentingViewController: UIViewController?,
+                  presentedOffset: CGFloat) {
+        self.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        self.presentedOffset = presentedOffset
     }
 
     // MARK: - Override
@@ -74,11 +84,13 @@ class CardPresentationController: UIPresentationController {
 
     override func containerViewWillLayoutSubviews() {
         presentedView?.frame = frameOfPresentedViewInContainerView
+        presentedView?.layer.cornerRadius = 16
+        presentedView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
     override func size(forChildContentContainer container: UIContentContainer,
                        withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: parentSize.width, height: parentSize.height*(2.0/3.0))
+        return CGSize(width: parentSize.width, height: parentSize.height - presentedOffset)
     }
 
     // MARK: - Private
