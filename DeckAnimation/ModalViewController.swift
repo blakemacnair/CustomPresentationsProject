@@ -29,6 +29,9 @@ public class ModalViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+
+        view.backgroundColor = .white
+
         configureLayout()
     }
 

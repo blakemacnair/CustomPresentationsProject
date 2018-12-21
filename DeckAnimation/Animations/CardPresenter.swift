@@ -21,7 +21,7 @@ public class CardPresenter: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
 
         guard let base = transitionContext.viewController(forKey: .from),
-            let modal = transitionContext.viewController(forKey: .to) as? ModalViewController
+            let modal = transitionContext.viewController(forKey: .to) as? CardViewController
             else { return }
 
         containerView.addSubview(modal.view)

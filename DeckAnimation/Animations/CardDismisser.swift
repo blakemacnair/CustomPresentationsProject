@@ -20,7 +20,7 @@ public class CardDismisser: NSObject, UIViewControllerAnimatedTransitioning {
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
 
-        guard let modal = transitionContext.viewController(forKey: .from) as? ModalViewController,
+        guard let modal = transitionContext.viewController(forKey: .from) as? CardViewController,
             let base = transitionContext.viewController(forKey: .to)
             else { return }
 

@@ -29,13 +29,6 @@ public class CardViewController: UIViewController {
         return view
     }()
 
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
     init(backingImage: UIImage, rootViewController: UIViewController) {
         self.rootViewController = rootViewController
         self.backingImage = backingImage
@@ -62,17 +55,18 @@ public class CardViewController: UIViewController {
 
     private func configureRootViewController() {
         addChild(rootViewController)
-        containerView.addSubview(rootViewController.view)
+        rootViewController.view.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private func configureLayout() {
+        let rootView = rootViewController.view!
         view.addSubview(backingImageView)
         view.addSubview(dimmerView)
-        view.addSubview(containerView)
+        view.addSubview(rootView)
         view.backgroundColor = .clear
 
-        containerView.layer.cornerRadius = 16
-        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        rootView.layer.cornerRadius = 16
+        rootView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
 
         NSLayoutConstraint.activate([
             backingImageView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -85,10 +79,10 @@ public class CardViewController: UIViewController {
             dimmerView.leftAnchor.constraint(equalTo: view.leftAnchor),
             dimmerView.rightAnchor.constraint(equalTo: view.rightAnchor),
 
-            containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            containerView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            containerView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            rootView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            rootView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            rootView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            rootView.rightAnchor.constraint(equalTo: view.rightAnchor)
             ])
     }
 

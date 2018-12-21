@@ -40,7 +40,8 @@ class ViewController: UIViewController {
     }
 
     @objc func displayModalView() {
-        let modalVC = ModalViewController(backingImage: view.makeSnapshot())
+        let modalVC = CardViewController(backingImage: view.makeSnapshot(),
+                                         rootViewController: ModalViewController())
         modalVC.transitioningDelegate = self
 
         present(modalVC, animated: true, completion: nil)
