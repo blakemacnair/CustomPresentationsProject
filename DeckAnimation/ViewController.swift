@@ -32,8 +32,22 @@ class ViewController: UIViewController {
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
+
+        button.addTarget(self, action: #selector(displayModalView), for: .touchUpInside)
     }
 
+    @objc func displayModalView() {
+        let modalVC = ModalViewController(backingImage: view.makeSnapshot())
 
+        present(modalVC, animated: false, completion: nil)
+    }
 }
 
+extension UIView {
+    func makeSnapshot() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
+    }
+}

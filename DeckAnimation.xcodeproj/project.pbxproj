@@ -11,6 +11,7 @@
 		DB9FCEF321CD52DA00BE0B03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCEF221CD52DA00BE0B03 /* ViewController.swift */; };
 		DB9FCEF821CD52DB00BE0B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */; };
 		DB9FCEFB21CD52DB00BE0B03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */; };
+		DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9FCEFA21CD52DB00BE0B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB9FCEFC21CD52DB00BE0B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9FCEF021CD52DA00BE0B03 /* AppDelegate.swift */,
+				DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */,
 				DB9FCEF221CD52DA00BE0B03 /* ViewController.swift */,
 				DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */,
 				DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9FCEF321CD52DA00BE0B03 /* ViewController.swift in Sources */,
+				DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */,
 				DB9FCEF121CD52DA00BE0B03 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
