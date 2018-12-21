@@ -20,9 +20,14 @@ class CardPresentationController: UIPresentationController {
         return view
     }()
 
-    override var presentationStyle: UIModalPresentationStyle { return UIModalPresentationStyle.formSheet }
+    override var frameOfPresentedViewInContainerView: CGRect {
+        let frame: CGRect = CGRect(origin: CGPoint(x: 0,
+                                                   y: containerView!.frame.height*(1.0/3.0)),
+                                   size: size(forChildContentContainer: presentedViewController,
+                                              withParentContainerSize: containerView!.bounds.size))
 
-    override var adaptivePresentationStyle: UIModalPresentationStyle { return UIModalPresentationStyle.custom }
+        return frame
+    }
 
     // MARK: - Init
 
@@ -34,28 +39,46 @@ class CardPresentationController: UIPresentationController {
     }
 
     // MARK: - Override
+
     override func presentationTransitionWillBegin() {
+        guard let containerView = containerView else { return }
+        containerView.addSubview(dimmingView)
 
-    }
+        NSLayoutConstraint.activate([
+            dimmingView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            dimmingView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            dimmingView.leftAnchor.constraint(equalTo: containerView.leftAnchor),
+            dimmingView.rightAnchor.constraint(equalTo: containerView.rightAnchor)
+            ])
 
-    override func dismissalTransitionWillBegin() {
+        guard let coordinator = presentedViewController.transitionCoordinator else {
+            dimmingView.alpha = 1.0
+            return
+        }
 
-    }
-
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { context in
-
-        }, completion: { context in
-
+        coordinator.animate(alongsideTransition: { _ in
+            self.dimmingView.alpha = 1.0
         })
     }
 
-    override func presentationTransitionDidEnd(_ completed: Bool) {
+    override func dismissalTransitionWillBegin() {
+        guard let coordinator = presentedViewController.transitionCoordinator else {
+            dimmingView.alpha = 0.0
+            return
+        }
 
+        coordinator.animate(alongsideTransition: { _ in
+            self.dimmingView.alpha = 0.0
+        })
     }
 
-    override func dismissalTransitionDidEnd(_ completed: Bool) {
+    override func containerViewWillLayoutSubviews() {
+        presentedView?.frame = frameOfPresentedViewInContainerView
+    }
 
+    override func size(forChildContentContainer container: UIContentContainer,
+                       withParentContainerSize parentSize: CGSize) -> CGSize {
+        return CGSize(width: parentSize.width, height: parentSize.height*(2.0/3.0))
     }
 
     // MARK: - Private
