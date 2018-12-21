@@ -25,6 +25,13 @@ public class ModalViewController: UIViewController {
         return view
     }()
 
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
     private lazy var button: UIButton = {
         let button =  UIButton(type: .roundedRect)
         button.setTitle("Dismiss!", for: .normal)
@@ -49,7 +56,8 @@ public class ModalViewController: UIViewController {
 
         view.addSubview(backingImageView)
         view.addSubview(dimmerView)
-        view.addSubview(button)
+        view.addSubview(containerView)
+        containerView.addSubview(button)
 
         NSLayoutConstraint.activate([
             backingImageView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -62,15 +70,20 @@ public class ModalViewController: UIViewController {
             dimmerView.leftAnchor.constraint(equalTo: view.leftAnchor),
             dimmerView.rightAnchor.constraint(equalTo: view.rightAnchor),
 
-            button.heightAnchor.constraint(equalToConstant: 80),
-            button.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            containerView.rightAnchor.constraint(equalTo: view.rightAnchor),
 
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100)
+            button.heightAnchor.constraint(equalToConstant: 80),
+            button.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.8),
+
+            button.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 100)
             ])
 
-        view.layer.cornerRadius = 16
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        containerView.layer.cornerRadius = 16
+        containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
 
     }
 

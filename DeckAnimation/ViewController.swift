@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     @objc func displayModalView() {
         let modalVC = ModalViewController(backingImage: view.makeSnapshot())
 
-        present(modalVC, animated: false, completion: nil)
+        present(modalVC, animated: true, completion: nil)
     }
 }
 
