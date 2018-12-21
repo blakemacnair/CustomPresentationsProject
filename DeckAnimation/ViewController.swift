@@ -40,8 +40,7 @@ class ViewController: UIViewController {
     }
 
     @objc func displayModalView() {
-        let modalVC = CardViewController(backingImage: view.makeSnapshot(),
-                                         rootViewController: ModalViewController())
+        let modalVC = CardViewController(rootViewController: ModalViewController())
         modalVC.transitioningDelegate = self
 
         present(modalVC, animated: true, completion: nil)
@@ -57,14 +56,5 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return dismisser
-    }
-}
-
-extension UIView {
-    func makeSnapshot() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
-        }
     }
 }

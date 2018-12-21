@@ -36,8 +36,18 @@ public class CardPresenter: NSObject, UIViewControllerAnimatedTransitioning {
         },
                        completion: { _ in
                         base.view.alpha = 1
+                        modal.setBackingImage(base.view.makeSnapshot())
                         modal.configure(presented: true)
                         transitionContext.completeTransition(true)
         })
+    }
+}
+
+private extension UIView {
+    func makeSnapshot() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
     }
 }
