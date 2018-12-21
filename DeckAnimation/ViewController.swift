@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let animator = CardPresenter()
+    let presenter = CardPresenter()
+    let dismisser = CardDismisser()
 
     private lazy var button: UIButton = {
         let button =  UIButton(type: .roundedRect)
@@ -50,11 +51,11 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return animator
+        return presenter
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        return dismisser
     }
 }
 

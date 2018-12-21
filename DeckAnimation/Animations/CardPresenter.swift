@@ -20,23 +20,23 @@ public class CardPresenter: NSObject, UIViewControllerAnimatedTransitioning {
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
 
-        guard let fromViewController = transitionContext.viewController(forKey: .from),
-            let toViewController = transitionContext.viewController(forKey: .to) as? ModalViewController
+        guard let base = transitionContext.viewController(forKey: .from),
+            let modal = transitionContext.viewController(forKey: .to) as? ModalViewController
             else { return }
 
-        toViewController.configure(presented: false)
+        containerView.addSubview(modal.view)
 
-        containerView.addSubview(toViewController.view)
-        toViewController.view.frame.origin.y = containerView.frame.size.height
+        modal.configure(presented: false)
+        modal.view.frame.origin.y = containerView.frame.size.height
+
         UIView.animate(withDuration: duration,
                        animations: {
-                        toViewController.view.frame.origin.y = containerView.frame.origin.y
-                        fromViewController.view.alpha = 0.3
-
+                        modal.view.frame.origin.y = containerView.frame.origin.y
+                        base.view.alpha = 0.3
         },
                        completion: { _ in
-                        fromViewController.view.alpha = 1
-                        toViewController.configure(presented: true)
+                        base.view.alpha = 1
+                        modal.configure(presented: true)
                         transitionContext.completeTransition(true)
         })
     }

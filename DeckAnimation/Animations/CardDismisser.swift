@@ -24,18 +24,18 @@ public class CardDismisser: NSObject, UIViewControllerAnimatedTransitioning {
             let base = transitionContext.viewController(forKey: .to)
             else { return }
 
-        modal.configure(presented: true)
+        transitionContext.containerView.insertSubview(base.view, at: 0)
+
+        modal.configure(presented: false)
         modal.view.frame.origin.y = containerView.frame.origin.y
 
         base.view.alpha = 0.3
 
-        containerView.addSubview(base.view)
-
         UIView.animate(withDuration: duration,
                        animations: {
                         modal.view.frame.origin.y = containerView.frame.size.height
-                        base.view.alpha = 1
 
+                        base.view.alpha = 1
         },
                        completion: { _ in
                         modal.configure(presented: false)
