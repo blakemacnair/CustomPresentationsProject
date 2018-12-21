@@ -40,21 +40,20 @@ class ViewController: UIViewController {
     }
 
     @objc func displayModalView() {
-        let modalVC = CardViewController(rootViewController: ModalViewController())
-        modalVC.transitioningDelegate = self
+        let modal = ModalViewController()
+        modal.transitioningDelegate = self
+        modal.modalPresentationStyle = .custom
 
-        present(modalVC, animated: true, completion: nil)
+        present(modal, animated: true, completion: nil)
     }
 }
 
 extension ViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController,
-                             presenting: UIViewController,
-                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return presenter
-    }
-
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return dismisser
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        let presentationController = CardPresentationController(presentedViewController: presented,
+                                                                presenting: presenting)
+        return presentationController
     }
 }
