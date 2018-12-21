@@ -10,9 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let presenter = CardPresenter()
-    let dismisser = CardDismisser()
-
     private lazy var button: UIButton = {
         let button =  UIButton(type: .roundedRect)
         button.setTitle("Press me!", for: .normal)

@@ -12,9 +12,6 @@
 		DB9FCEF821CD52DB00BE0B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */; };
 		DB9FCEFB21CD52DB00BE0B03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */; };
 		DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */; };
-		DB9FCF0521CD618A00BE0B03 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0421CD618A00BE0B03 /* CardPresenter.swift */; };
-		DB9FCF0821CD682F00BE0B03 /* CardDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0721CD682F00BE0B03 /* CardDismisser.swift */; };
-		DB9FCF0A21CD6B5200BE0B03 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0921CD6B5200BE0B03 /* CardViewController.swift */; };
 		DB9FCF0C21CD759500BE0B03 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +23,6 @@
 		DB9FCEFA21CD52DB00BE0B03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB9FCEFC21CD52DB00BE0B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		DB9FCF0421CD618A00BE0B03 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
-		DB9FCF0721CD682F00BE0B03 /* CardDismisser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDismisser.swift; sourceTree = "<group>"; };
-		DB9FCF0921CD6B5200BE0B03 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,26 +56,15 @@
 		DB9FCEEF21CD52DA00BE0B03 /* DeckAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				DB9FCF0621CD681C00BE0B03 /* Animations */,
 				DB9FCEF021CD52DA00BE0B03 /* AppDelegate.swift */,
 				DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */,
 				DB9FCEF221CD52DA00BE0B03 /* ViewController.swift */,
 				DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */,
 				DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */,
 				DB9FCEFC21CD52DB00BE0B03 /* Info.plist */,
-				DB9FCF0921CD6B5200BE0B03 /* CardViewController.swift */,
 				DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */,
 			);
 			path = DeckAnimation;
-			sourceTree = "<group>";
-		};
-		DB9FCF0621CD681C00BE0B03 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				DB9FCF0421CD618A00BE0B03 /* CardPresenter.swift */,
-				DB9FCF0721CD682F00BE0B03 /* CardDismisser.swift */,
-			);
-			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,11 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9FCF0821CD682F00BE0B03 /* CardDismisser.swift in Sources */,
 				DB9FCEF321CD52DA00BE0B03 /* ViewController.swift in Sources */,
-				DB9FCF0A21CD6B5200BE0B03 /* CardViewController.swift in Sources */,
 				DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */,
-				DB9FCF0521CD618A00BE0B03 /* CardPresenter.swift in Sources */,
 				DB9FCF0C21CD759500BE0B03 /* CardPresentationController.swift in Sources */,
 				DB9FCEF121CD52DA00BE0B03 /* AppDelegate.swift in Sources */,
 			);
