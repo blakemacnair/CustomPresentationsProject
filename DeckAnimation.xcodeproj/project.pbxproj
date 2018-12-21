@@ -14,6 +14,7 @@
 		DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */; };
 		DB9FCF0521CD618A00BE0B03 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0421CD618A00BE0B03 /* CardPresenter.swift */; };
 		DB9FCF0821CD682F00BE0B03 /* CardDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0721CD682F00BE0B03 /* CardDismisser.swift */; };
+		DB9FCF0A21CD6B5200BE0B03 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0921CD6B5200BE0B03 /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		DB9FCF0421CD618A00BE0B03 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DB9FCF0721CD682F00BE0B03 /* CardDismisser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDismisser.swift; sourceTree = "<group>"; };
+		DB9FCF0921CD6B5200BE0B03 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */,
 				DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */,
 				DB9FCEFC21CD52DB00BE0B03 /* Info.plist */,
+				DB9FCF0921CD6B5200BE0B03 /* CardViewController.swift */,
 			);
 			path = DeckAnimation;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				DB9FCF0821CD682F00BE0B03 /* CardDismisser.swift in Sources */,
 				DB9FCEF321CD52DA00BE0B03 /* ViewController.swift in Sources */,
+				DB9FCF0A21CD6B5200BE0B03 /* CardViewController.swift in Sources */,
 				DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */,
 				DB9FCF0521CD618A00BE0B03 /* CardPresenter.swift in Sources */,
 				DB9FCEF121CD52DA00BE0B03 /* AppDelegate.swift in Sources */,
