@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let transition = CardAnimator()
+
     private lazy var button: UIButton = {
         let button =  UIButton(type: .roundedRect)
         button.setTitle("Press me!", for: .normal)
@@ -38,8 +40,21 @@ class ViewController: UIViewController {
 
     @objc func displayModalView() {
         let modalVC = ModalViewController(backingImage: view.makeSnapshot())
+        modalVC.transitioningDelegate = self
 
         present(modalVC, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return transition
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
     }
 }
 
