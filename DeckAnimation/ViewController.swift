@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: CardPresentingViewController {
 
     private lazy var button: UIButton = {
         let button =  UIButton(type: .roundedRect)
@@ -40,51 +40,5 @@ class ViewController: UIViewController {
         presentCard(presentedViewController: ModalViewController(),
                     animated: true,
                     completion: nil)
-    }
-}
-
-extension ViewController: CardPresenter {
-    func presentCard(presentedViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        presentedViewController.transitioningDelegate = self
-        presentedViewController.modalPresentationStyle = presentationStyleForCurrentTraitCollection
-
-        present(presentedViewController, animated: animated, completion: completion)
-    }
-}
-
-extension ViewController: UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController,
-                                presenting: UIViewController?,
-                                source: UIViewController) -> UIPresentationController? {
-        let presentationController = CardPresentationController(presentedViewController: presented,
-                                                                presenting: presenting,
-                                                                heightRatio: 0.5)
-        return presentationController
-    }
-}
-
-extension UIViewController: UIAdaptivePresentationControllerDelegate {
-    public func adaptivePresentationStyle(for controller: UIPresentationController,
-                                          traitCollection: UITraitCollection)
-        -> UIModalPresentationStyle {
-            switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
-            case (.compact, _): return .custom
-            case (.regular, .compact): return .custom
-            case (.regular, .regular): return .formSheet
-            case (.unspecified, _): return .custom
-            case (_, .unspecified): return .custom
-            }
-    }
-}
-
-extension UIViewController {
-    public var presentationStyleForCurrentTraitCollection: UIModalPresentationStyle {
-        switch (self.traitCollection.horizontalSizeClass, self.traitCollection.verticalSizeClass) {
-        case (.compact, _): return .custom
-        case (.regular, .compact): return .custom
-        case (.regular, .regular): return .formSheet
-        case (.unspecified, _): return .custom
-        case (_, .unspecified): return .custom
-        }
     }
 }

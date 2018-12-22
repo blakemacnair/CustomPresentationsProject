@@ -8,10 +8,6 @@
 
 import UIKit
 
-public protocol CardPresenter: class {
-    func presentCard(presentedViewController: UIViewController, animated: Bool, completion: (() -> Void)?)
-}
-
 public class CardPresentationController: UIPresentationController {
 
     // MARK: - Properties
