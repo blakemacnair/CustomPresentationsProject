@@ -8,7 +8,11 @@
 
 import UIKit
 
-class CardPresentationController: UIPresentationController {
+public protocol CardPresenter: class {
+    func presentCard(presentedViewController: UIViewController, animated: Bool, completion: (() -> Void)?)
+}
+
+public class CardPresentationController: UIPresentationController {
 
     // MARK: - Properties
 
@@ -22,7 +26,7 @@ class CardPresentationController: UIPresentationController {
         return view
     }()
 
-    override var frameOfPresentedViewInContainerView: CGRect {
+    override public var frameOfPresentedViewInContainerView: CGRect {
         let frame: CGRect = CGRect(origin: CGPoint(x: 0,
                                                    y: presentedOffset),
                                    size: size(forChildContentContainer: presentedViewController,
@@ -50,7 +54,7 @@ class CardPresentationController: UIPresentationController {
 
     // MARK: - Override
 
-    override func presentationTransitionWillBegin() {
+    override public func presentationTransitionWillBegin() {
         guard let containerView = containerView else { return }
         containerView.addSubview(dimmingView)
 
@@ -71,7 +75,7 @@ class CardPresentationController: UIPresentationController {
         })
     }
 
-    override func dismissalTransitionWillBegin() {
+    override public func dismissalTransitionWillBegin() {
         guard let coordinator = presentedViewController.transitionCoordinator else {
             dimmingView.alpha = 0.0
             return
@@ -82,13 +86,13 @@ class CardPresentationController: UIPresentationController {
         })
     }
 
-    override func containerViewWillLayoutSubviews() {
+    override public func containerViewWillLayoutSubviews() {
         presentedView?.frame = frameOfPresentedViewInContainerView
         presentedView?.layer.cornerRadius = 16
         presentedView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
-    override func size(forChildContentContainer container: UIContentContainer,
+    override public func size(forChildContentContainer container: UIContentContainer,
                        withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: parentSize.width, height: parentSize.height - presentedOffset)
     }

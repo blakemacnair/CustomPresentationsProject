@@ -37,11 +37,18 @@ class ViewController: UIViewController {
     }
 
     @objc func displayModalView() {
-        let modal = ModalViewController()
-        modal.transitioningDelegate = self
-        modal.modalPresentationStyle = presentationStyleForCurrentTraitCollection
+        presentCard(presentedViewController: ModalViewController(),
+                    animated: true,
+                    completion: nil)
+    }
+}
 
-        present(modal, animated: true, completion: nil)
+extension ViewController: CardPresenter {
+    func presentCard(presentedViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        presentedViewController.transitioningDelegate = self
+        presentedViewController.modalPresentationStyle = presentationStyleForCurrentTraitCollection
+
+        present(presentedViewController, animated: animated, completion: completion)
     }
 }
 
