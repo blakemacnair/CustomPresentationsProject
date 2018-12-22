@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class CardPresentationController: UIPresentationController {
+public class CardPresentationController: UIPresentationController {
 
     // MARK: - Properties
 
@@ -22,7 +22,7 @@ open class CardPresentationController: UIPresentationController {
         return view
     }()
 
-    override open var frameOfPresentedViewInContainerView: CGRect {
+    override public var frameOfPresentedViewInContainerView: CGRect {
         let yOffset = presentingViewController.view.frame.height * (1 - heightRatio)
         let frame: CGRect = CGRect(origin: CGPoint(x: 0,
                                                    y: yOffset),
@@ -51,7 +51,7 @@ open class CardPresentationController: UIPresentationController {
 
     // MARK: - Override
 
-    override open func presentationTransitionWillBegin() {
+    override public func presentationTransitionWillBegin() {
         guard let containerView = containerView else { return }
         containerView.addSubview(dimmingView)
 
@@ -72,7 +72,7 @@ open class CardPresentationController: UIPresentationController {
         })
     }
 
-    override open func dismissalTransitionWillBegin() {
+    override public func dismissalTransitionWillBegin() {
         guard let coordinator = presentedViewController.transitionCoordinator else {
             dimmingView.alpha = 0.0
             return
@@ -83,13 +83,13 @@ open class CardPresentationController: UIPresentationController {
         })
     }
 
-    override open func containerViewWillLayoutSubviews() {
+    override public func containerViewWillLayoutSubviews() {
         presentedView?.frame = frameOfPresentedViewInContainerView
         presentedView?.layer.cornerRadius = 16
         presentedView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
-    override open func size(forChildContentContainer container: UIContentContainer,
+    override public func size(forChildContentContainer container: UIContentContainer,
                        withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: parentSize.width, height: parentSize.height * heightRatio)
     }
