@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DeckAnimation.xcodeproj">
+      location = "self:/Users/bmacnair/Documents/DeckAnimation/DeckAnimation.xcodeproj">
    </FileRef>
 </Workspace>
