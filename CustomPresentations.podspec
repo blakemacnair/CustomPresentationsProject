@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "CustomPresentations"
   s.version      = "0.1.0"
+  s.swift_version= "4.2"
   s.summary      = "A framework for quickly implementing different custom presentation styles."
 
   # This description is used to generate tags and improve search results.
@@ -28,8 +29,7 @@ Pod::Spec.new do |s|
   CustomPresentations is a framework for quickly implementing different custom view controller presentation styles.
                    DESC
 
-  # s.homepage     = "http://EXAMPLE/CustomPresentations"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  s.homepage     = "https://github.com/blakemacnair/CustomPresentationsProject"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -39,8 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -54,9 +53,7 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "Blake Macnair" => "blakemacnair@gmail.com" }
-  # Or just: s.author    = "Blake Macnair"
-  # s.authors            = { "Blake Macnair" => "bmacnair@activecampaign.com" }
-  s.social_media_url   = "https://www.linkedin.com/in/blake-macnair/"
+  # s.social_media_url   = "https://www.linkedin.com/in/blake-macnair"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -80,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/CustomPresentations.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/blakemacnair/CustomPresentationsProject.git", :tag => "v" + "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,10 +88,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "CustomPresentations/**/*.swift"
   s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
