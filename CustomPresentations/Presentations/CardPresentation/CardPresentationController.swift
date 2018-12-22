@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CardPresentationController: UIPresentationController {
+open class CardPresentationController: UIPresentationController {
 
     // MARK: - Properties
 
@@ -22,7 +22,7 @@ public class CardPresentationController: UIPresentationController {
         return view
     }()
 
-    override public var frameOfPresentedViewInContainerView: CGRect {
+    override open var frameOfPresentedViewInContainerView: CGRect {
         let yOffset = presentingViewController.view.frame.height * (1 - heightRatio)
         let frame: CGRect = CGRect(origin: CGPoint(x: 0,
                                                    y: yOffset),
@@ -34,7 +34,7 @@ public class CardPresentationController: UIPresentationController {
 
     // MARK: - Init
 
-    override init(presentedViewController: UIViewController,
+    override public init(presentedViewController: UIViewController,
                   presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController,
                    presenting: presentingViewController)
@@ -42,7 +42,7 @@ public class CardPresentationController: UIPresentationController {
         setupGestureRecognizer()
     }
 
-    convenience init(presentedViewController: UIViewController,
+    public convenience init(presentedViewController: UIViewController,
                   presenting presentingViewController: UIViewController?,
                   heightRatio: CGFloat) {
         self.init(presentedViewController: presentedViewController, presenting: presentingViewController)
@@ -51,7 +51,7 @@ public class CardPresentationController: UIPresentationController {
 
     // MARK: - Override
 
-    override public func presentationTransitionWillBegin() {
+    override open func presentationTransitionWillBegin() {
         guard let containerView = containerView else { return }
         containerView.addSubview(dimmingView)
 
@@ -72,7 +72,7 @@ public class CardPresentationController: UIPresentationController {
         })
     }
 
-    override public func dismissalTransitionWillBegin() {
+    override open func dismissalTransitionWillBegin() {
         guard let coordinator = presentedViewController.transitionCoordinator else {
             dimmingView.alpha = 0.0
             return
@@ -83,13 +83,13 @@ public class CardPresentationController: UIPresentationController {
         })
     }
 
-    override public func containerViewWillLayoutSubviews() {
+    override open func containerViewWillLayoutSubviews() {
         presentedView?.frame = frameOfPresentedViewInContainerView
         presentedView?.layer.cornerRadius = 16
         presentedView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
-    override public func size(forChildContentContainer container: UIContentContainer,
+    override open func size(forChildContentContainer container: UIContentContainer,
                        withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: parentSize.width, height: parentSize.height * heightRatio)
     }

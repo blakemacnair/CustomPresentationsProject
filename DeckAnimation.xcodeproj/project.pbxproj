@@ -18,6 +18,16 @@
 		DB9FCF2121CDC9DA00BE0B03 /* CardPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0D21CDC7A700BE0B03 /* CardPresentingViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DB9FCF2221CDCB8000BE0B03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9FCEE521CD52DA00BE0B03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9FCF1321CDC99300BE0B03;
+			remoteInfo = CustomPresentations;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DB9FCEED21CD52DA00BE0B03 /* DeckAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9FCEF021CD52DA00BE0B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +153,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DB9FCF2321CDCB8000BE0B03 /* PBXTargetDependency */,
 			);
 			name = DeckAnimation;
 			productName = DeckAnimation;
@@ -244,6 +255,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB9FCF2321CDCB8000BE0B03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB9FCF1321CDC99300BE0B03 /* CustomPresentations */;
+			targetProxy = DB9FCF2221CDCB8000BE0B03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */ = {

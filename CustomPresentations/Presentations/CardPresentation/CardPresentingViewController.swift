@@ -8,15 +8,15 @@
 
 import UIKit
 
-public class CardPresentingViewController: UIViewController, UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate {
-    public func presentCard(presentedViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+open class CardPresentingViewController: UIViewController, UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate {
+    open func presentCard(presentedViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
         presentedViewController.transitioningDelegate = self
         presentedViewController.modalPresentationStyle = presentationStyleForCurrentTraitCollection
 
         present(presentedViewController, animated: animated, completion: completion)
     }
 
-    public func presentationController(forPresented presented: UIViewController,
+    open func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
         let presentationController = CardPresentationController(presentedViewController: presented,
@@ -36,7 +36,7 @@ public class CardPresentingViewController: UIViewController, UIViewControllerTra
         }
     }
 
-    public func adaptivePresentationStyle(for controller: UIPresentationController,
+    open func adaptivePresentationStyle(for controller: UIPresentationController,
                                           traitCollection: UITraitCollection)
         -> UIModalPresentationStyle {
             switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
