@@ -22,6 +22,7 @@ public class CardPresentingViewController: UIViewController, UIViewControllerTra
         let presentationController = CardPresentationController(presentedViewController: presented,
                                                                 presenting: presenting,
                                                                 heightRatio: 0.5)
+
         return presentationController
     }
 

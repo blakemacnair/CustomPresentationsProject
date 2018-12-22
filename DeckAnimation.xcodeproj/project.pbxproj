@@ -12,8 +12,10 @@
 		DB9FCEF821CD52DB00BE0B03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */; };
 		DB9FCEFB21CD52DB00BE0B03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */; };
 		DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */; };
-		DB9FCF0C21CD759500BE0B03 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */; };
-		DB9FCF0E21CDC7A700BE0B03 /* CardPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0D21CDC7A700BE0B03 /* CardPresentingViewController.swift */; };
+		DB9FCF1821CDC99300BE0B03 /* CustomPresentations.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9FCF1621CDC99300BE0B03 /* CustomPresentations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB9FCF1D21CDC9A700BE0B03 /* CustomPresentations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9FCF1421CDC99300BE0B03 /* CustomPresentations.framework */; };
+		DB9FCF2021CDC9D700BE0B03 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */; };
+		DB9FCF2121CDC9DA00BE0B03 /* CardPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9FCF0D21CDC7A700BE0B03 /* CardPresentingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +28,21 @@
 		DB9FCF0221CD55F800BE0B03 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 		DB9FCF0D21CDC7A700BE0B03 /* CardPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentingViewController.swift; sourceTree = "<group>"; };
+		DB9FCF1421CDC99300BE0B03 /* CustomPresentations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CustomPresentations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9FCF1621CDC99300BE0B03 /* CustomPresentations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPresentations.h; sourceTree = "<group>"; };
+		DB9FCF1721CDC99300BE0B03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DB9FCEEA21CD52DA00BE0B03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9FCF1D21CDC9A700BE0B03 /* CustomPresentations.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9FCF1121CDC99300BE0B03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				DB9FCEEF21CD52DA00BE0B03 /* DeckAnimation */,
+				DB9FCF1521CDC99300BE0B03 /* CustomPresentations */,
 				DB9FCEEE21CD52DA00BE0B03 /* Products */,
+				DB9FCF1C21CDC9A700BE0B03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9FCEED21CD52DA00BE0B03 /* DeckAnimation.app */,
+				DB9FCF1421CDC99300BE0B03 /* CustomPresentations.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,13 +80,56 @@
 				DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */,
 				DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */,
 				DB9FCEFC21CD52DB00BE0B03 /* Info.plist */,
-				DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */,
-				DB9FCF0D21CDC7A700BE0B03 /* CardPresentingViewController.swift */,
 			);
 			path = DeckAnimation;
 			sourceTree = "<group>";
 		};
+		DB9FCF1521CDC99300BE0B03 /* CustomPresentations */ = {
+			isa = PBXGroup;
+			children = (
+				DB9FCF1E21CDC9B400BE0B03 /* Presentations */,
+				DB9FCF1621CDC99300BE0B03 /* CustomPresentations.h */,
+				DB9FCF1721CDC99300BE0B03 /* Info.plist */,
+			);
+			path = CustomPresentations;
+			sourceTree = "<group>";
+		};
+		DB9FCF1C21CDC9A700BE0B03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB9FCF1E21CDC9B400BE0B03 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				DB9FCF1F21CDC9C500BE0B03 /* CardPresentation */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
+		DB9FCF1F21CDC9C500BE0B03 /* CardPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				DB9FCF0B21CD759500BE0B03 /* CardPresentationController.swift */,
+				DB9FCF0D21CDC7A700BE0B03 /* CardPresentingViewController.swift */,
+			);
+			path = CardPresentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DB9FCF0F21CDC99300BE0B03 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9FCF1821CDC99300BE0B03 /* CustomPresentations.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		DB9FCEEC21CD52DA00BE0B03 /* DeckAnimation */ = {
@@ -90,6 +149,24 @@
 			productReference = DB9FCEED21CD52DA00BE0B03 /* DeckAnimation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DB9FCF1321CDC99300BE0B03 /* CustomPresentations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB9FCF1921CDC99300BE0B03 /* Build configuration list for PBXNativeTarget "CustomPresentations" */;
+			buildPhases = (
+				DB9FCF0F21CDC99300BE0B03 /* Headers */,
+				DB9FCF1021CDC99300BE0B03 /* Sources */,
+				DB9FCF1121CDC99300BE0B03 /* Frameworks */,
+				DB9FCF1221CDC99300BE0B03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomPresentations;
+			productName = CustomPresentations;
+			productReference = DB9FCF1421CDC99300BE0B03 /* CustomPresentations.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +178,9 @@
 				ORGANIZATIONNAME = Macnair;
 				TargetAttributes = {
 					DB9FCEEC21CD52DA00BE0B03 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DB9FCF1321CDC99300BE0B03 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -119,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				DB9FCEEC21CD52DA00BE0B03 /* DeckAnimation */,
+				DB9FCF1321CDC99300BE0B03 /* CustomPresentations */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +214,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB9FCF1221CDC99300BE0B03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -142,9 +230,16 @@
 			files = (
 				DB9FCEF321CD52DA00BE0B03 /* ViewController.swift in Sources */,
 				DB9FCF0321CD55F800BE0B03 /* ModalViewController.swift in Sources */,
-				DB9FCF0C21CD759500BE0B03 /* CardPresentationController.swift in Sources */,
 				DB9FCEF121CD52DA00BE0B03 /* AppDelegate.swift in Sources */,
-				DB9FCF0E21CDC7A700BE0B03 /* CardPresentingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9FCF1021CDC99300BE0B03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9FCF2021CDC9D700BE0B03 /* CardPresentationController.swift in Sources */,
+				DB9FCF2121CDC9DA00BE0B03 /* CardPresentingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +409,62 @@
 			};
 			name = Release;
 		};
+		DB9FCF1A21CDC99300BE0B03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PCSX5KABFK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CustomPresentations/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CustomPresentations;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DB9FCF1B21CDC99300BE0B03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PCSX5KABFK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CustomPresentations/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CustomPresentations;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +482,15 @@
 			buildConfigurations = (
 				DB9FCF0021CD52DB00BE0B03 /* Debug */,
 				DB9FCF0121CD52DB00BE0B03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9FCF1921CDC99300BE0B03 /* Build configuration list for PBXNativeTarget "CustomPresentations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9FCF1A21CDC99300BE0B03 /* Debug */,
+				DB9FCF1B21CDC99300BE0B03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
