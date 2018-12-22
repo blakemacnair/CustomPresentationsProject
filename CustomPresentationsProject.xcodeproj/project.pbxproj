@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DB9FCEED21CD52DA00BE0B03 /* DeckAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9FCEED21CD52DA00BE0B03 /* CustomPresentationsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPresentationsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9FCEF021CD52DA00BE0B03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB9FCEF221CD52DA00BE0B03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB9FCEF721CD52DB00BE0B03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		DB9FCEE421CD52DA00BE0B03 = {
 			isa = PBXGroup;
 			children = (
-				DB9FCEEF21CD52DA00BE0B03 /* DeckAnimation */,
+				DB9FCEEF21CD52DA00BE0B03 /* CustomPresentationsProject */,
 				DB9FCF1521CDC99300BE0B03 /* CustomPresentations */,
 				DB9FCEEE21CD52DA00BE0B03 /* Products */,
 				DB9FCF1C21CDC9A700BE0B03 /* Frameworks */,
@@ -75,13 +75,13 @@
 		DB9FCEEE21CD52DA00BE0B03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB9FCEED21CD52DA00BE0B03 /* DeckAnimation.app */,
+				DB9FCEED21CD52DA00BE0B03 /* CustomPresentationsProject.app */,
 				DB9FCF1421CDC99300BE0B03 /* CustomPresentations.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB9FCEEF21CD52DA00BE0B03 /* DeckAnimation */ = {
+		DB9FCEEF21CD52DA00BE0B03 /* CustomPresentationsProject */ = {
 			isa = PBXGroup;
 			children = (
 				DB9FCEF021CD52DA00BE0B03 /* AppDelegate.swift */,
@@ -91,7 +91,7 @@
 				DB9FCEF921CD52DB00BE0B03 /* LaunchScreen.storyboard */,
 				DB9FCEFC21CD52DB00BE0B03 /* Info.plist */,
 			);
-			path = DeckAnimation;
+			path = CustomPresentationsProject;
 			sourceTree = "<group>";
 		};
 		DB9FCF1521CDC99300BE0B03 /* CustomPresentations */ = {
@@ -142,9 +142,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DB9FCEEC21CD52DA00BE0B03 /* DeckAnimation */ = {
+		DB9FCEEC21CD52DA00BE0B03 /* CustomPresentationsProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB9FCEFF21CD52DB00BE0B03 /* Build configuration list for PBXNativeTarget "DeckAnimation" */;
+			buildConfigurationList = DB9FCEFF21CD52DB00BE0B03 /* Build configuration list for PBXNativeTarget "CustomPresentationsProject" */;
 			buildPhases = (
 				DB9FCEE921CD52DA00BE0B03 /* Sources */,
 				DB9FCEEA21CD52DA00BE0B03 /* Frameworks */,
@@ -155,9 +155,9 @@
 			dependencies = (
 				DB9FCF2321CDCB8000BE0B03 /* PBXTargetDependency */,
 			);
-			name = DeckAnimation;
+			name = CustomPresentationsProject;
 			productName = DeckAnimation;
-			productReference = DB9FCEED21CD52DA00BE0B03 /* DeckAnimation.app */;
+			productReference = DB9FCEED21CD52DA00BE0B03 /* CustomPresentationsProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DB9FCF1321CDC99300BE0B03 /* CustomPresentations */ = {
@@ -196,7 +196,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB9FCEE821CD52DA00BE0B03 /* Build configuration list for PBXProject "DeckAnimation" */;
+			buildConfigurationList = DB9FCEE821CD52DA00BE0B03 /* Build configuration list for PBXProject "CustomPresentationsProject" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -209,7 +209,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB9FCEEC21CD52DA00BE0B03 /* DeckAnimation */,
+				DB9FCEEC21CD52DA00BE0B03 /* CustomPresentationsProject */,
 				DB9FCF1321CDC99300BE0B03 /* CustomPresentations */,
 			);
 		};
@@ -398,13 +398,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = DeckAnimation/Info.plist;
+				INFOPLIST_FILE = CustomPresentationsProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = macnair.DeckAnimation;
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CustomPresentationsProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,13 +417,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = DeckAnimation/Info.plist;
+				INFOPLIST_FILE = CustomPresentationsProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = macnair.DeckAnimation;
+				PRODUCT_BUNDLE_IDENTIFIER = macnair.CustomPresentationsProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB9FCEE821CD52DA00BE0B03 /* Build configuration list for PBXProject "DeckAnimation" */ = {
+		DB9FCEE821CD52DA00BE0B03 /* Build configuration list for PBXProject "CustomPresentationsProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB9FCEFD21CD52DB00BE0B03 /* Debug */,
@@ -500,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB9FCEFF21CD52DB00BE0B03 /* Build configuration list for PBXNativeTarget "DeckAnimation" */ = {
+		DB9FCEFF21CD52DB00BE0B03 /* Build configuration list for PBXNativeTarget "CustomPresentationsProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB9FCF0021CD52DB00BE0B03 /* Debug */,

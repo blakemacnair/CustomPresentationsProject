@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  DeckAnimation
+//  CustomPresentationsProject
 //
 //  Created by Blake Macnair on 12/21/18.
 //  Copyright © 2018 Macnair. All rights reserved.
