@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     @objc func displayModalView() {
         let modal = ModalViewController()
         modal.transitioningDelegate = self
-        modal.modalPresentationStyle = .custom
+        modal.modalPresentationStyle = presentationStyleForCurrentTraitCollection
 
         present(modal, animated: true, completion: nil)
     }
@@ -53,5 +53,31 @@ extension ViewController: UIViewControllerTransitioningDelegate {
                                                                 presenting: presenting,
                                                                 presentedOffset: 500)
         return presentationController
+    }
+}
+
+extension UIViewController: UIAdaptivePresentationControllerDelegate {
+    public func adaptivePresentationStyle(for controller: UIPresentationController,
+                                          traitCollection: UITraitCollection)
+        -> UIModalPresentationStyle {
+            switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+            case (.compact, _): return .custom
+            case (.regular, .compact): return .custom
+            case (.regular, .regular): return .formSheet
+            case (.unspecified, _): return .custom
+            case (_, .unspecified): return .custom
+            }
+    }
+}
+
+extension UIViewController {
+    public var presentationStyleForCurrentTraitCollection: UIModalPresentationStyle {
+        switch (self.traitCollection.horizontalSizeClass, self.traitCollection.verticalSizeClass) {
+        case (.compact, _): return .custom
+        case (.regular, .compact): return .custom
+        case (.regular, .regular): return .formSheet
+        case (.unspecified, _): return .custom
+        case (_, .unspecified): return .custom
+        }
     }
 }
