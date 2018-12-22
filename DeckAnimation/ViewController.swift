@@ -58,7 +58,7 @@ extension ViewController: UIViewControllerTransitioningDelegate {
                                 source: UIViewController) -> UIPresentationController? {
         let presentationController = CardPresentationController(presentedViewController: presented,
                                                                 presenting: presenting,
-                                                                presentedOffset: 500)
+                                                                heightRatio: 0.5)
         return presentationController
     }
 }

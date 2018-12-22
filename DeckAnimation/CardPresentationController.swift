@@ -16,7 +16,7 @@ public class CardPresentationController: UIPresentationController {
 
     // MARK: - Properties
 
-    private var presentedOffset: CGFloat = 0
+    private var heightRatio: CGFloat = 0
 
     private lazy var dimmingView: UIView = {
         let view = UIView()
@@ -27,8 +27,9 @@ public class CardPresentationController: UIPresentationController {
     }()
 
     override public var frameOfPresentedViewInContainerView: CGRect {
+        let yOffset = presentingViewController.view.frame.height * (1 - heightRatio)
         let frame: CGRect = CGRect(origin: CGPoint(x: 0,
-                                                   y: presentedOffset),
+                                                   y: yOffset),
                                    size: size(forChildContentContainer: presentedViewController,
                                               withParentContainerSize: containerView!.bounds.size))
 
@@ -47,9 +48,9 @@ public class CardPresentationController: UIPresentationController {
 
     convenience init(presentedViewController: UIViewController,
                   presenting presentingViewController: UIViewController?,
-                  presentedOffset: CGFloat) {
+                  heightRatio: CGFloat) {
         self.init(presentedViewController: presentedViewController, presenting: presentingViewController)
-        self.presentedOffset = presentedOffset
+        self.heightRatio = heightRatio
     }
 
     // MARK: - Override
@@ -94,7 +95,7 @@ public class CardPresentationController: UIPresentationController {
 
     override public func size(forChildContentContainer container: UIContentContainer,
                        withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: parentSize.width, height: parentSize.height - presentedOffset)
+        return CGSize(width: parentSize.width, height: parentSize.height * heightRatio)
     }
 
     // MARK: - Private
